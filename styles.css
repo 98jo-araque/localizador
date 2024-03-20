@@ -1,0 +1,68 @@
+/* Estilos para el header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para la navegación */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Estilos para el main */
+main {
+    padding: 20px;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para las secciones */
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+JavaScript (scripts.js):
+javascript
+Copy code
+function cambiarContenido(seccion) {
+    // Ocultar todas las secciones
+    var secciones = document.querySelectorAll('section');
+    secciones.forEach(function(seccion) {
+        seccion.classList.remove('active');
+    });
+
+    // Mostrar la sección seleccionada
+    var seccionSeleccionada = document.getElementById(seccion);
+    seccionSeleccionada.classList.add('active');
+
+    // Actualizar el título de la página
+    var titulo = document.getElementById('titulo');
+    titulo.textContent = 'Página - ' + seccion.charAt(0).toUpperCase() + seccion.slice(1);
+}
